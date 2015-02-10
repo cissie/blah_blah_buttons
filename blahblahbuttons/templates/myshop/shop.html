@@ -1,0 +1,13 @@
+{% extends "myshop/base.html" %}
+{% load url from future %}
+{% load static %}
+{% block body %}
+  {% load i18n %}
+<h3><a href="{% url 'product_list' %}">Product list</a></h3><br />
+  <h3><a href="{% url 'cart' %}">Your cart</a></h3><br />
+
+  {% if user.is_authenticated %}
+    {% trans "Hello" %} {{ user }}
+    <h3><a href="{% url 'order_list' %}">{% trans "Your orders" %}</a></h3>
+  {% endif %}
+{% endblock %}

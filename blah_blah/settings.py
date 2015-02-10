@@ -38,10 +38,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'shop',
     'blahblahbuttons',
-    'polymorphic', # We need polymorphic installed for the shop
+    'polymorphic', # We need polymorphic installed for the myshop
     'south',
-    'shop', # The django SHOP application
     'shop.addressmodel', # The default Address and country models
     'myshop',
 )
@@ -66,12 +66,8 @@ WSGI_APPLICATION = 'blah_blah.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blah_blah_buttons',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
